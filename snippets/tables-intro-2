@@ -1,0 +1,4 @@
+with tables.openFile('mydata.h5', 'r') as h5:
+    data = h5.root.some_data[:]
+
+    sampled_data = h5.root.some_data[::10]

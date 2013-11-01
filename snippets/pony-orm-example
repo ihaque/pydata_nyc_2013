@@ -1,0 +1,14 @@
+from pony.orm import Database, Required
+from pony.orm import db_session
+
+db = Database('sqlite', ':memory')
+class HapMapAllele(db.Entity):
+  rsid = Required(str)
+  ref_freq = Required(float)
+  alt_freq = Required(float)
+
+...
+
+with db_session:
+    select(allele for allele in HapMapAllele
+           if allele.alt_freq > 0.01)[:]

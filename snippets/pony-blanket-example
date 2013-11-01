@@ -1,0 +1,12 @@
+class HapMapAllele(Row):
+  ...
+  rsid.indexed = True
+
+from pony_blanket import csv_to_db
+db, models = csv_to_db({'hapmap.txt': HapMapAllele})
+
+from pony.orm import db_session, select
+with db_session:
+  print len(select(x.rsid
+                   for x in models[HapMapAllele]
+                   if x.alt_freq > 0.01))

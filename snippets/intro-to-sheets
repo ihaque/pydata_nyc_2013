@@ -1,0 +1,9 @@
+from sheets import Dialect, Row
+from sheets import StringColumn, FloatColumn
+
+class HapMapRow(Row):
+  Dialect = Dialect(has_header_row=True,
+                    delimiter=' ')
+  rsid = StringColumn()
+  ref_freq = FloatColumn()
+  other_freq = FloatColumn()

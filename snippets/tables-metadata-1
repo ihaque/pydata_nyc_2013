@@ -1,0 +1,7 @@
+import numpy as np
+row_type = np.dtype([('batch', 'S16'),
+                     ('well', 'S3'),
+                     ('idx', 'u8')])
+
+metatable = h5.createTable(h5.root, 'metadata',
+                           description=row_type)

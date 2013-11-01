@@ -1,0 +1,9 @@
+next(row for row in rows
+     if row.rsid == 'rs6423165').ref_freq
+
+rsid2ref_freq = {
+    row.rsid: row.ref_freq
+    for row in read_csv('hapmap.txt')
+}
+
+rsid2ref_freq['rs6423165']

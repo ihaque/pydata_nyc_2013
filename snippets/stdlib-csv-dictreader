@@ -1,0 +1,6 @@
+import csv
+def read_csv(filename):
+  with open(filename, 'r') as csvfile:
+    for row in csv.DictReader(csvfile,
+                              delimiter=' '):
+      yield row

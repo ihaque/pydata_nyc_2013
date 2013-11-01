@@ -1,0 +1,12 @@
+new_row = metatable.row
+
+for i in xrange(10):
+    new_row['batch'] = 'Batch %d' % i
+    new_row['well'] = 'A01'
+    new_row['idx'] = i
+    new_row.append()
+
+metatable.cols.batch.createCSIndex()
+metatable.cols.well.createCSIndex()
+
+metatable.flush()

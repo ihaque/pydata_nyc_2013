@@ -1,0 +1,8 @@
+rows = read_csv('hapmap.txt')
+pop2rsid2ref_freq = {
+    pop: {
+        row.rsid: row.ref_freq
+        for row in rows
+        if row.pop == pop
+    } for pop in {row.pop for row in rows}
+}

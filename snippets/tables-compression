@@ -1,0 +1,13 @@
+filters = tables.Filters(complevel=1,
+                         complib='zlib',
+                         fletcher32=True,
+                         shuffle=True)
+
+chunked = h5.createCArray(h5.root, 'chunked_data',
+                          atom=tables.FloatAtom(),
+                          shape=data.shape,
+                          filters=filters)
+
+chunked[:] = data
+
+

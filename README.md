@@ -26,6 +26,9 @@ with the open-source license terms of [Pony ORM](http://ponyorm.com).
 
 ## `pony_blanket`: Automatic text <-> database adapter
 
+See `pony_blanket/pony_blanket_example.py` for an example of usage. Run the
+Makefile in that directory to regenerate all necessary data files.
+
 The `pony_blanket` module is an adapter between the schemas defined by Marty Alchin's
 [`sheets` module](https://github.com/gulopine/sheets), providing
 schematized parsing for delimited text data, and [Pony ORM](http://ponyorm.com), an ORM

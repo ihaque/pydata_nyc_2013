@@ -1,0 +1,4 @@
+import sqlite3
+db = sqlite3.connect(':memory:')
+...
+for row in db.execute('SELECT * FROM ...'):

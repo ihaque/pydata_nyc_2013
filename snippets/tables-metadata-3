@@ -1,0 +1,6 @@
+ def get_row_indices(batch, well):
+
+     query = '(batch == "%s") & (well == "%s")'
+
+     for row in metatable.where(query % (batch, well)):
+        yield row['idx']

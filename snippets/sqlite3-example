@@ -1,0 +1,13 @@
+db.execute('''CREATE TABLE hapmap
+              (rsid VARCHAR,
+               ref_freq REAL,
+               alt_freq REAL);''')
+
+for row in read_csv(hapmap_file):
+  db.execute('''INSERT INTO hapmap
+                (rsid, ref_freq, alt_freq)
+                VALUES (?, ?, ?);''',
+             (row.rsid, row.ref_freq, row.alt_freq))
+
+db.execute('SELECT rsid FROM hapmap '
+           'WHERE alt_freq > 0.01;')

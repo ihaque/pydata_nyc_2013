@@ -1,0 +1,6 @@
+# data is a numpy array
+
+import tables
+h5 = tables.openFile('mydata.h5', 'w')
+h5.createArray(h5.root, 'some_data', data)
+h5.close()
